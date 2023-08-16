@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MarketViewController: UIViewController {
 
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
     }
 
 
