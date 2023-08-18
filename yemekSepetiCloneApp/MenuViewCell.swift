@@ -11,8 +11,7 @@ class MenuViewCell: UICollectionViewCell {
    
     @IBOutlet weak var categoryImageView: UIImageView!
     
-    @IBOutlet weak var labelName: UILabel!
-    //    @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var categoryName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

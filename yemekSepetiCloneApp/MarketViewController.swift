@@ -83,7 +83,7 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuViewCell", for: indexPath) as? MenuViewCell {
             let category = categoryList[indexPath.row]
                 cell.categoryImageView.image = UIImage(named: category.image!)
-//                cell.categoryName.text = category.name!
+                cell.categoryName.text = category.name!
                return cell
         }
         return UICollectionViewCell()
