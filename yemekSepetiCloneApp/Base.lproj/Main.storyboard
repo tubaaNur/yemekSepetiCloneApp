@@ -98,7 +98,7 @@
                                 <color key="textColor" red="0.98039215690000003" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-IW-fFd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="category" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-IW-fFd">
                                 <rect key="frame" x="0.0" y="482" width="414" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -178,6 +178,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="slider" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mWB-nn-cEZ">
+                                <rect key="frame" x="26" y="310" width="368" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N1u-0Y-Ia8">
+                                    <size key="itemSize" width="368" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="YHO-hQ-kA7" customClass="SliderCollectionViewCell" customModule="yemekSepetiCloneApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mPF-CW-bvA">
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider" translatesAutoresizingMaskIntoConstraints="NO" id="MY2-2y-f4q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MY2-2y-f4q" firstAttribute="leading" secondItem="mPF-CW-bvA" secondAttribute="leading" id="ExH-G7-U2U"/>
+                                                <constraint firstAttribute="bottom" secondItem="MY2-2y-f4q" secondAttribute="bottom" id="QPF-31-gnP"/>
+                                                <constraint firstAttribute="trailing" secondItem="MY2-2y-f4q" secondAttribute="trailing" id="cpH-cu-rGA"/>
+                                                <constraint firstItem="MY2-2y-f4q" firstAttribute="top" secondItem="mPF-CW-bvA" secondAttribute="top" id="odE-gJ-qVB"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="368" height="128"/>
+                                        <connections>
+                                            <outlet property="sliderImage" destination="MY2-2y-f4q" id="0Xo-Me-p2W"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gez-sK-J2s"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="si9-dm-cBS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,11 +239,12 @@
                     </view>
                     <connections>
                         <outlet property="categoryCollectionView" destination="FVr-IW-fFd" id="91n-hC-CaK"/>
+                        <outlet property="sliderCollectionView" destination="mWB-nn-cEZ" id="amw-rY-gXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2794.6564885496182" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2794.202898550725" y="3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>
@@ -213,6 +253,7 @@
         <image name="Image 2" width="88" height="84"/>
         <image name="fit" width="346" height="266"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="slider" width="504" height="228"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

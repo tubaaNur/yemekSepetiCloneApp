@@ -11,6 +11,10 @@ class MarketViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+   
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
+    
+    var sliderImageList = ["slider","slider","slider","slider","slider","slider"]
     
     var categoryList = [Category]()
     
@@ -73,22 +77,40 @@ class MarketViewController: UIViewController {
 
 
 }
-extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryList.count
+       
+        if(collectionView.restorationIdentifier == "category"){
+            return categoryList.count
+        }
+        else{
+            return sliderImageList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuViewCell", for: indexPath) as? MenuViewCell {
-            let category = categoryList[indexPath.row]
-                cell.categoryImageView.image = UIImage(named: category.image!)
+       
+        if(collectionView.restorationIdentifier == "category"){
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuViewCell", for: indexPath) as? MenuViewCell {
+                let category = categoryList[indexPath.row]
+                         cell.categoryImageView.image = UIImage(named: category.image!)
                 cell.categoryName.text = category.name!
-               return cell
+                return cell
+            }
+            return UICollectionViewCell()
         }
-        return UICollectionViewCell()
+        else{
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SliderCollectionViewCell {
+                cell.sliderImage.image = UIImage(named: sliderImageList[indexPath.row])
+                return cell
+            }
+            return UICollectionViewCell()
+        }
+
     }
-    
-}
+
+    }
+
 
 
