@@ -100,36 +100,36 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="category" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-IW-fFd">
                                 <rect key="frame" x="0.0" y="482" width="414" height="414"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.96396683673469385" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="414" id="T2v-bg-jct"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GhB-Ry-tCB">
-                                    <size key="itemSize" width="113" height="139"/>
+                                    <size key="itemSize" width="171" height="229"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuViewCell" id="eCF-de-wgG" customClass="MenuViewCell" customModule="yemekSepetiCloneApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="139"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="229"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c5S-mQ-nOR">
-                                            <rect key="frame" x="0.0" y="0.0" width="113" height="139"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="229"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-qx-VBF">
-                                                    <rect key="frame" x="7" y="0.0" width="99" height="139"/>
+                                                    <rect key="frame" x="7" y="0.0" width="157" height="229"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fit" translatesAutoresizingMaskIntoConstraints="NO" id="FW1-CA-IYA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="99" height="80"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="157" height="80"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="Bih-7O-XIB"/>
                                                                 <constraint firstAttribute="height" constant="80" id="oWd-AS-BvB"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kişisel Bakım Sağlık" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-EP-kpM">
-                                                            <rect key="frame" x="0.0" y="113" width="99" height="26"/>
+                                                            <rect key="frame" x="0.0" y="113" width="157" height="116"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -149,7 +149,7 @@
                                                 <constraint firstItem="tbC-qx-VBF" firstAttribute="top" secondItem="c5S-mQ-nOR" secondAttribute="top" id="skW-mT-EwR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="113" height="139"/>
+                                        <size key="customSize" width="171" height="229"/>
                                         <connections>
                                             <outlet property="categoryImageView" destination="FW1-CA-IYA" id="Qyj-Fh-4Kw"/>
                                             <outlet property="categoryName" destination="xYr-EP-kpM" id="nhl-BN-ThA"/>
@@ -222,7 +222,7 @@
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="si9-dm-cBS"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.96396683670000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="si9-dm-cBS" firstAttribute="trailing" secondItem="DA9-9M-eG0" secondAttribute="trailing" constant="9" id="1hr-DP-5cp"/>

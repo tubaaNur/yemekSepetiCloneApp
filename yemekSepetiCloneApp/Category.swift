@@ -8,17 +8,14 @@
 import Foundation
 
 class Category{
+    
     var name:String?
     var image:String?
    
-    init(){
-        
-    }
+    init(){}
     
     init(name: String? = nil, image: String? = nil) {
-    
         self.name = name
         self.image = image
-       
     }
 }

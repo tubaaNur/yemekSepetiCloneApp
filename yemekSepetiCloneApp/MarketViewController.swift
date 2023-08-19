@@ -33,11 +33,9 @@ class MarketViewController: UIViewController {
                          Category(name: "Kişisel Bakım", image:  "personal care"),
                          Category(name: "Ev Bakım", image:  "clean"),
                          Category(name: "Evcil Hayvan", image:  "animals")
-              
     ]
     
     var currentCellIndex = 0
-  
     var timer = Timer()
     
     override func viewDidLoad() {
@@ -45,15 +43,11 @@ class MarketViewController: UIViewController {
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-        
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
         
-    
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext),userInfo: nil,repeats: true)
-     
         pageControl.numberOfPages = sliderImageList.count
-
     }
     
     @objc func slideToNext()
@@ -71,6 +65,7 @@ class MarketViewController: UIViewController {
         sliderCollectionView.isPagingEnabled = true
     }
 }
+
 extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,11 +79,13 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(collectionView.restorationIdentifier)
+        
         if(collectionView.restorationIdentifier == "category"){
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuViewCell", for: indexPath) as? MenuViewCell {
                 let category = categoryList[indexPath.row]
-                         cell.categoryImageView.image = UIImage(named: category.image!)
+                cell.categoryImageView.image = UIImage(named: category.image!)
+                cell.categoryImageView.backgroundColor = .white
+                cell.categoryImageView.layer.cornerRadius = 14
                 cell.categoryName.text = category.name!
                 return cell
             }
@@ -101,24 +98,19 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
             }
             return UICollectionViewCell()
         }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if(collectionView.restorationIdentifier == "category"){
-           
-            // 10 X 10 X 10 = 30 BOŞLUK
-            // 15X 15 X 15 x 15 = 50 BOŞLUK
-            let ekranGenislik = UIScreen.main.bounds.width
-            let itemGenislik = (ekranGenislik-80) / 4
+            let screenWidth = UIScreen.main.bounds.width
+            let itemWidth = (screenWidth-100) / 4
 
-            return CGSize(width: itemGenislik, height: itemGenislik * 1.6)
+            return CGSize(width: itemWidth * 1.2, height: itemWidth * 1.2)
         }
         else{
             return CGSize(width: sliderCollectionView.frame.width, height: sliderCollectionView.frame.height)
         }
     }
-
-    }
+}
 
 
