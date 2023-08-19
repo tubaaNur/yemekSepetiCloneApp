@@ -24,6 +24,10 @@ class MarketViewController: UIViewController {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         
+        sliderCollectionView.delegate = self
+        sliderCollectionView.dataSource = self
+
+        
         let m1 = Category( name: "Yeni Ürünler", image: "ring")
         let m2 = Category(name: "Fırından", image:  "bread")
         let m3 = Category( name: "Su", image:  "water")
@@ -58,6 +62,11 @@ class MarketViewController: UIViewController {
         categoryList.append(m14)
         categoryList.append(m15)
         categoryList.append(m16)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal // Yatay kaydırma gerekiyorsa
+        sliderCollectionView.collectionViewLayout = layout
+
       
        
         let tasarım = UICollectionViewFlowLayout()
@@ -90,7 +99,7 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        print(collectionView.restorationIdentifier)
         if(collectionView.restorationIdentifier == "category"){
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuViewCell", for: indexPath) as? MenuViewCell {
                 let category = categoryList[indexPath.row]
