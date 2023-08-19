@@ -69,18 +69,6 @@ class MarketViewController: UIViewController {
 
       
        
-        let tasarım = UICollectionViewFlowLayout()
-        tasarım.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        tasarım.minimumInteritemSpacing = 10
-        tasarım.minimumLineSpacing = 10
-        
-        // 10 X 10 X 10 = 30 BOŞLUK
-        // 15X 15 X 15 x 15 = 50 BOŞLUK
-        let ekranGenislik = UIScreen.main.bounds.width
-        let itemGenislik = (ekranGenislik-80) / 4
-        
-        tasarım.itemSize = CGSize(width: itemGenislik, height: itemGenislik * 1.6)
-        categoryCollectionView.collectionViewLayout = tasarım
         
     }
 
@@ -117,6 +105,21 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return UICollectionViewCell()
         }
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if(collectionView.restorationIdentifier == "category"){
+           
+            // 10 X 10 X 10 = 30 BOŞLUK
+            // 15X 15 X 15 x 15 = 50 BOŞLUK
+            let ekranGenislik = UIScreen.main.bounds.width
+            let itemGenislik = (ekranGenislik-80) / 4
+
+            return CGSize(width: itemGenislik, height: itemGenislik * 1.6)
+        }
+        else{
+            return CGSize(width: sliderCollectionView.frame.width, height: sliderCollectionView.frame.height)
+        }
     }
 
     }
