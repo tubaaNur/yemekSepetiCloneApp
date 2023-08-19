@@ -11,12 +11,34 @@ class MarketViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
-   
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     
-    var sliderImageList = ["slider","slider","slider","slider","slider","slider"]
+    var sliderImageList = ["slider","slider2","slider","slider2","slider","slider2"]
     
-    var categoryList = [Category]()
+    var categoryList = [ Category( name: "Yeni Ürünler", image: "ring"),
+                         Category(name: "Fırından", image:  "bread"),
+                         Category( name: "Su", image:  "water"),
+                         Category(name: "Sağlıklı Yaşam", image:  "fit"),
+                         Category(name: "Meyve & Sebze", image:  "vegetable"),
+                         Category(name: "İçecek", image:  "drinks"),
+                         Category(name: "Atıştırmalık", image:  "snack"),
+                         Category(name: "Dondurma", image:  "ice cream"),
+                         Category(name: "Hazır ve Donuk Gıda", image:  "prepared foods"),
+                         Category(name: "Taze Yemek", image:  "fresh food"),
+                         Category(name: "Kahve", image:  "coffee"),
+                         Category(name: "Temel Gıda", image:  "staple fod"),
+                         Category(name: "Sağlıklı Yaşam", image:  "fit"),
+                         Category(name: "Kişisel Bakım", image:  "personal care"),
+                         Category(name: "Ev Bakım", image:  "clean"),
+                         Category(name: "Evcil Hayvan", image:  "animals")
+              
+    ]
+    
+    var currentCellIndex = 0
+  
+    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,53 +48,30 @@ class MarketViewController: UIViewController {
         
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
+     
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext),userInfo: nil,repeats: true)
+        
+        pageControl.numberOfPages = sliderImageList.count
 
-        
-        let m1 = Category( name: "Yeni Ürünler", image: "ring")
-        let m2 = Category(name: "Fırından", image:  "bread")
-        let m3 = Category( name: "Su", image:  "water")
-        let m4 = Category(name: "Sağlıklı Yaşam", image:  "fit")
-        let m5 = Category(name: "Meyve & Sebze", image:  "vegetable")
-        let m6 = Category(name: "İçecek", image:  "drinks")
-        let m7 = Category(name: "Atıştırmalık", image:  "snack")
-        let m8 = Category(name: "Dondurma", image:  "ice cream")
-        let m9 = Category(name: "Hazır ve Donuk Gıda", image:  "prepared foods")
-        let m10 = Category(name: "Taze Yemek", image:  "fresh food")
-        let m11 = Category(name: "Kahve", image:  "coffee")
-        let m12 = Category(name: "Temel Gıda", image:  "staple fod")
-        let m13 = Category(name: "Sağlıklı Yaşam", image:  "fit")
-        let m14 = Category(name: "Kişisel Bakım", image:  "personal care")
-        let m15 = Category(name: "Ev Bakım", image:  "clean")
-        let m16 = Category(name: "Evcil Hayvan", image:  "animals")
-        
-        
-        categoryList.append(m1)
-        categoryList.append(m2)
-        categoryList.append(m3)
-        categoryList.append(m4)
-        categoryList.append(m5)
-        categoryList.append(m6)
-        categoryList.append(m7)
-        categoryList.append(m8)
-        categoryList.append(m9)
-        categoryList.append(m10)
-        categoryList.append(m11)
-        categoryList.append(m12)
-        categoryList.append(m13)
-        categoryList.append(m14)
-        categoryList.append(m15)
-        categoryList.append(m16)
-        
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal // Yatay kaydırma gerekiyorsa
+        layout.scrollDirection = .horizontal
         sliderCollectionView.collectionViewLayout = layout
 
-      
-       
-        
     }
-
-
+    
+    @objc func slideToNext()
+    {
+        if currentCellIndex < sliderImageList.count-1
+        {
+            currentCellIndex = currentCellIndex+1
+        }
+        else{
+            currentCellIndex = 0
+        }
+        sliderCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .right, animated: true)
+        pageControl.currentPage = currentCellIndex
+   
+    }
 }
 extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
@@ -123,6 +122,5 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     }
-
 
 
