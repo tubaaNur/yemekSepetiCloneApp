@@ -30,6 +30,7 @@
 		29B38C4C2A8D683E005CD156 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		29B38C4E2A8D6AB4005CD156 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		29DF5F122A90D49300BDD7F5 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
+		29DF5F142A91581500BDD7F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		29B38BDD2A8C01C2005CD156 = {
 			isa = PBXGroup;
 			children = (
+				29DF5F142A91581500BDD7F5 /* README.md */,
 				29B38BE82A8C01C2005CD156 /* yemekSepetiCloneApp */,
 				29B38BE72A8C01C2005CD156 /* Products */,
 			);
