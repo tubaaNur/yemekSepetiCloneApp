@@ -66,7 +66,7 @@ class MarketViewController: UIViewController {
         let ekranGenislik = UIScreen.main.bounds.width
         let itemGenislik = (ekranGenislik-80) / 4
         
-        tasarım.itemSize = CGSize(width: itemGenislik, height: itemGenislik * 1.2 )
+        tasarım.itemSize = CGSize(width: itemGenislik, height: itemGenislik * 1.4 )
         categoryCollectionView.collectionViewLayout = tasarım
         
     }
