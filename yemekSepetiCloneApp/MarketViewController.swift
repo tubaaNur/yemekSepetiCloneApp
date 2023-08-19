@@ -38,7 +38,7 @@ class MarketViewController: UIViewController {
     
     var currentCellIndex = 0
   
-    var timer:Timer?
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,14 +48,11 @@ class MarketViewController: UIViewController {
         
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
-     
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext),userInfo: nil,repeats: true)
         
+    
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext),userInfo: nil,repeats: true)
+     
         pageControl.numberOfPages = sliderImageList.count
-
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        sliderCollectionView.collectionViewLayout = layout
 
     }
     
@@ -68,9 +65,10 @@ class MarketViewController: UIViewController {
         else{
             currentCellIndex = 0
         }
-        sliderCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .right, animated: true)
         pageControl.currentPage = currentCellIndex
-   
+        sliderCollectionView.isPagingEnabled = false
+        self.sliderCollectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .right, animated: true)
+        sliderCollectionView.isPagingEnabled = true
     }
 }
 extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
