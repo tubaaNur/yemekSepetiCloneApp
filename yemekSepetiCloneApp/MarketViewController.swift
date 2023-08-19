@@ -13,6 +13,8 @@ class MarketViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     
     var sliderImageList = ["slider","slider2","slider","slider2","slider","slider2"]
@@ -41,6 +43,9 @@ class MarketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.setSearchFieldBackgroundImage(UIImage(), for: .normal)
+        searchBar.searchBarStyle = .minimal
+        searchBar.layer.cornerRadius = 10
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         sliderCollectionView.delegate = self

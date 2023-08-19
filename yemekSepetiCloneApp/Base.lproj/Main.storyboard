@@ -42,19 +42,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <searchBar contentMode="redraw" placeholder="Ürün veya Kategori Ara" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-gg-omW">
+                                    <searchBar contentMode="redraw" placeholder="Ürün veya Kategori Ara" translucent="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-gg-omW">
                                         <rect key="frame" x="23" y="150" width="368" height="56"/>
-                                        <color key="backgroundColor" systemColor="systemMintColor"/>
-                                        <color key="tintColor" systemColor="tintColor"/>
-                                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <scopeButtonTitles>
                                             <string>Title</string>
                                             <string>Title</string>
                                         </scopeButtonTitles>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Hxp-iJ-KZb"/>
-                                        </connections>
                                     </searchBar>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 2" translatesAutoresizingMaskIntoConstraints="NO" id="0Vd-ai-cNh">
                                         <rect key="frame" x="345" y="85" width="46" height="46"/>
@@ -242,6 +239,7 @@
                     <connections>
                         <outlet property="categoryCollectionView" destination="FVr-IW-fFd" id="91n-hC-CaK"/>
                         <outlet property="pageControl" destination="UCC-f5-kbi" id="LxA-FV-GYq"/>
+                        <outlet property="searchBar" destination="1Oz-gg-omW" id="C6I-vB-psY"/>
                         <outlet property="sliderCollectionView" destination="mWB-nn-cEZ" id="amw-rY-gXx"/>
                     </connections>
                 </viewController>
@@ -257,14 +255,11 @@
         <image name="fit" width="346" height="266"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="slider" width="504" height="228"/>
-        <systemColor name="systemBackgroundColor">
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
