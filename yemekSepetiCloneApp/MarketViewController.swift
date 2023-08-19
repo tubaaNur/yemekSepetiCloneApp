@@ -94,6 +94,7 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
         else{
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SliderCollectionViewCell {
                 cell.sliderImage.image = UIImage(named: sliderImageList[indexPath.row])
+                cell.sliderImage.layer.cornerRadius = 10
                 return cell
             }
             return UICollectionViewCell()
@@ -105,7 +106,7 @@ extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSo
             let screenWidth = UIScreen.main.bounds.width
             let itemWidth = (screenWidth-100) / 4
 
-            return CGSize(width: itemWidth * 1.2, height: itemWidth * 1.2)
+            return CGSize(width: itemWidth * 1.1, height: itemWidth * 1.6)
         }
         else{
             return CGSize(width: sliderCollectionView.frame.width, height: sliderCollectionView.frame.height)
