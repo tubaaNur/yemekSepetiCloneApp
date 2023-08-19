@@ -23,8 +23,8 @@ class MarketViewController: UIViewController {
         let m1 = Category( name: "Yeni Ürünler", image: "ring")
         let m2 = Category(name: "Fırından", image:  "bread")
         let m3 = Category( name: "Su", image:  "water")
-        let m4 = Category(name: "milk and breakfast", image:  "fit")
-        let m5 = Category(name: "Meyve § Sebze", image:  "vegetable")
+        let m4 = Category(name: "Sağlıklı Yaşam", image:  "fit")
+        let m5 = Category(name: "Meyve & Sebze", image:  "vegetable")
         let m6 = Category(name: "İçecek", image:  "drinks")
         let m7 = Category(name: "Atıştırmalık", image:  "snack")
         let m8 = Category(name: "Dondurma", image:  "ice cream")
@@ -66,7 +66,7 @@ class MarketViewController: UIViewController {
         let ekranGenislik = UIScreen.main.bounds.width
         let itemGenislik = (ekranGenislik-80) / 4
         
-        tasarım.itemSize = CGSize(width: itemGenislik, height: itemGenislik * 1.4 )
+        tasarım.itemSize = CGSize(width: itemGenislik, height: itemGenislik * 1.6)
         categoryCollectionView.collectionViewLayout = tasarım
         
     }
