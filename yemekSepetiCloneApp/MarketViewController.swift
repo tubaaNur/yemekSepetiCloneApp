@@ -17,7 +17,7 @@ class MarketViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     
-    var sliderImageList = ["slider","slider2","slider","slider2","slider","slider2"]
+    var sliderImageList = ["slider","slider2","slider3","slider4","slider5","slider6"]
     
     var categoryList = [ Category( name: "Yeni Ürünler", image: "ring"),
                          Category(name: "Fırından", image:  "bread"),
