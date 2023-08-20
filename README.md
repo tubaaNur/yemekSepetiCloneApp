@@ -7,7 +7,7 @@ This iOS application is a UI clone of the Yemeksepeti Market app, built using th
 ## Demo
 
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/88987132/261818641-5cd431dd-ab41-4324-994a-7395e3522e0e.mp4
+https://github.com/tubaaNur/yemekSepetiCloneApp/assets/88987132/e2196894-acf1-46d8-ad7c-bd65e901d547
 
 ## Features
 
